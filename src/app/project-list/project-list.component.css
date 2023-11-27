@@ -1,0 +1,198 @@
+:host(app-project-list){
+    height: fit-content;
+}
+.mainContainer{
+    width: 250px;
+    /* height: fit-content; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    /* overflow: hidden; */
+    border-radius: 5px;
+    gap: 1em;
+    background-color: var(--secondary);
+    padding: 0.5em 0 0.5em 0;
+}
+
+.projectNameContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+}
+
+.editContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.editCont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.editContInside{
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    padding: 1em;
+    gap: 0.5em;
+}
+
+.colors{
+    display: flex;
+    gap: 0.5em;
+}
+
+.colorBtn{
+    all: unset;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+.colorSelected{
+    transform: scale(1.5);
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.editButton:hover{
+    background-color: var(--touch);
+}
+
+.listName{
+    max-width: 50%;
+    overflow: hidden;
+}
+
+.projectDot{
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+}
+
+.addTicketButton{
+    all: unset;
+    color: var(--text);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.addTicketButton:hover{
+    text-decoration: underline;
+}
+
+.newTicketContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.ticketNameInput{
+    width: 80%;
+}
+
+.buttonsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 0.5em;
+}
+
+.addButton, .cancelButton{
+    all: unset;
+    width: 25%;
+    text-align: center;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 500;
+    min-height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    user-select: none;
+}
+
+.addButton{
+    background-color: var(--touch);
+}
+
+.cancelButton{
+    background-color: var(--red);
+}
+
+.deleteBtn, .cancelBtn, .applyBtn{
+    all: unset;
+    padding: 0.3em;
+    font-size: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.deleteBtn{
+    background-color: var(--red);
+    color: white;
+}
+
+.applyBtn{
+    background-color: #5cb85c;
+    color: white;
+}
+
+.cancelBtn{
+    background-color: rgb(191, 191, 191);
+    color: black;
+}
+
+.ticketsContainer{
+    min-height: 50px;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* gap: 1em; */
+}
+
+.tmpTicketContainer{
+    width: 90%;
+    background-color: var(--touch);
+    min-height: 50px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.addButton:hover , .cancelButton:hover, .deleteBtn:hover, .cancelBtn:hover, .applyBtn:hover{
+    transform: scale(1.05);
+}

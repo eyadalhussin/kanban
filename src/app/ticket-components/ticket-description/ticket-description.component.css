@@ -1,0 +1,10 @@
+:host(app-ticket-description){
+    width: 100%;
+}
+
+.descriptionTextarea{
+    height: 75px;
+    width: 100%;
+    transform-origin: 100% 0%;
+}
+

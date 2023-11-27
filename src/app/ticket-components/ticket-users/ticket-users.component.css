@@ -1,0 +1,86 @@
+:host(app-ticket-users){
+    width: 100%;
+}
+
+.users{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+}
+
+.userIcon{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.userIcon:hover{
+    transform: scale(1.1);
+}
+
+.addUserButtonContainer{
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    border-radius: 100%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.addUserButton{
+    all: unset;
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.avilableUsers{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.user{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 0.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user:hover{
+    background-color: var(--primary);
+}
+
+.tooltip{
+    position: relative;
+}
+
+.tooltiptext{
+    visibility: hidden;
+    color: white;
+    text-align: left;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    font-size: 0.7em;
+    font-weight: 600;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}

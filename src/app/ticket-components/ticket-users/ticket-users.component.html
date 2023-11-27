@@ -1,0 +1,31 @@
+<div class="cont">
+    <!-- Icon -->
+    <div class="iconCont">
+        <div class="iconName">
+            <img src="assets/icons/group.png" alt="" class="icon filterWhite">
+            <span class="text normal semiBold">Users</span>
+            <div class="addUserButtonContainer" (click)="toggleUsers()">
+                <button class="addUserButton">+</button>
+            </div>        
+        </div>
+    </div>
+    <!-- Users Icons -->
+    <div class="users">
+        <!-- <div class="userIcon"><span class="text normal">E</span></div>
+        <div class="userIcon"><span class="text normal">LK</span></div> -->
+        <div class="userIcon tooltip" *ngFor="let user of ticket.users" [ngStyle]="{'background-color' : user.color}" (click)="removeUser(user)">
+            <span class="text small">{{user.surname.substring(0,1)}}{{user.lastname.substring(0,1)}}</span>
+            <span class="text tooltiptext" [ngStyle]="{'background-color' : user.color}">{{user.surname}} {{user.lastname}}</span>
+        </div>
+
+    </div>
+
+    <div class="avilableUsers" *ngIf="usersToggled">
+        <div class="user" *ngFor="let element of avilableUsers" (click)="addUser(element)">
+            <div class="userIcon" [ngStyle]="{'background-color' : element.color}">
+                <span class="text small">{{element.surname.substring(0,1)}}{{element.lastname.substring(0,1)}}</span>
+            </div>
+            <span class="text normal">{{element.surname}} {{element.lastname}}</span>
+        </div>
+    </div>
+</div>

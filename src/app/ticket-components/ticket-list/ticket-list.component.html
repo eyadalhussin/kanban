@@ -1,0 +1,11 @@
+<div class="cont">
+    <div class="iconCont">
+        <div class="iconName">
+            <img src="assets/icons/clock.png" alt="" class="icon filterWhite">
+            <span class="text normal semiBold">List</span>
+        </div>
+    </div>
+    <select name="" id="" (change)="updateList(listOptions)" #listOptions>
+        <option value="{{element.name}}" *ngFor="let element of lists; let i = index" [selected]="i == ticket.listID">{{element.name}}</option>
+    </select>
+</div>

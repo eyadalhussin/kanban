@@ -1,0 +1,10 @@
+<div class="cont">
+    <div class="iconCont">
+        <div class="iconName">
+            <img src="assets/icons/clock.png" alt="" class="icon filterWhite">
+            <span class="text normal semiBold">Deadline</span>
+        </div>
+        <button class="toggleButton" (click)="toggleDeadline()">{{ticket.date == "" ? "+" : "-"}}</button>
+    </div>
+    <input class="dateInput" type="date" [value]="ticket.date" *ngIf="ticket.date != ''" [@pop] #deadlineInput (change)="updateDeadline(deadlineInput)">
+</div>

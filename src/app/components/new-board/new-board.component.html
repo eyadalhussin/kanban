@@ -1,0 +1,13 @@
+<form class="mainContainer" (ngSubmit)="addNewBoard(boardName)" (click)="closeBoardDiv($event, form)" #form>
+    <div class="newBoardContainer">
+        <span class="text normal semiBold">Board Name:</span>
+        <input type="text" required #boardName (input)="projectNameExists = false">
+        <div class="buttons">
+            <button class="applyButton" type="submit">Apply</button>
+            <button class="cancelButton" (click)="closeBoard()">Cancel</button>
+        </div>
+        <span class="text small warningText" *ngIf="projectNameExists">A project with this Name already exists!</span>
+    </div>
+</form>
+
+<!--  -->

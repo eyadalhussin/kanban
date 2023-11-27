@@ -1,0 +1,60 @@
+<div class="mainContainer" [@slide]="sideBarState">
+    <!-- Logo -->
+    <div class="logoContainer">
+        <!-- Lines -->
+        <div class="logoLines">
+            <div class="line100"><span></span></div>
+            <div class="line50"><span></span></div>
+            <div class="line25"><span></span></div>
+        </div>
+        <span class="large prim text semiBold">Kanban</span>
+    </div>
+
+    <!-- Info -->
+    <div class="infoContainer">
+        <!-- Profile picture -->
+        <div class="profilePicture">
+            <span class="text xlarge">MM</span>
+        </div>
+        <!-- Name -->
+        <span class="text normal semiBold">Max Muster</span>
+        <!-- breaker -->
+
+        <div class="breaker"></div>
+        <!-- All Boards(n) -->
+        <span class="text normal semiBold">All Boards({{projects.length}})</span>
+        <!-- Projects -->
+        <div class="projects">
+            <div class="project" *ngFor="let element of projects; let i = index" (click)="setActiveProject(i)" [ngClass]="{selected: activeProjectIndex == i}">
+                <span class="text normal medBold">{{element.name}}</span>
+            </div>
+        </div>
+        <!-- Create new  -->
+
+        <button class="createButton" *ngIf="!creatingNewBoard" (click)="toggleNewBoard()">+Create new Board</button>
+    </div>
+    <!-- Info -->
+
+    <!-- Options -->
+    <!-- <div class="options">
+        <div class="optionsContainer">
+            <div class="modeContainer">
+                <div class="modeCircle">
+                </div>
+                <div class="modeText">
+                    <span class="black normal semiBold">Dark</span>
+                </div>
+            </div>
+        </div>
+        <div class="hideContainer" (click)="closeSidebar()">
+            <img src="assets/icons/hide.png" alt="" class="hideIcon filterWhite">
+        </div>
+    </div> -->
+    <div class="hideContainer" (click)="closeSidebar()">
+        <img src="assets/icons/hide.png" alt="" class="hideIcon filterWhite">
+    </div>
+    <!-- Options -->
+
+
+
+</div>

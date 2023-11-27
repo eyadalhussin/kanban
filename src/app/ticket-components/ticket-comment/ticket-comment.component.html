@@ -1,0 +1,43 @@
+<div class="cont">
+    <!-- Comment and Icon -->
+    <div class="iconCont">
+        <div class="iconName">
+            <img src="assets/icons/comment.png" alt="" class="icon filterWhite">
+            <span class="text normal semiBold">Comments ({{ticket.comments.length}})</span>
+        </div>
+    </div>
+
+    <div class="addContainer">
+        <input type="text" class="checkItemInput" placeholder="Add new comment"
+            (keydown)="onComment(commentInput ,$event)" #commentInput>
+        <button class="addCheckItemButton" (click)="addComment(commentInput)">+</button>
+    </div>
+
+    <div class="showCommentContainer">
+        <button class="showCommentButton" *ngIf="!commentsShown" (click)="toggleCommentsShown()">Show
+            Comments</button>
+        <button class="showCommentButton" *ngIf="commentsShown" (click)="toggleCommentsShown()">Hide
+            Comments</button>
+    </div>
+</div>
+
+<div class="commentsContainer" *ngIf="commentsShown && ticket.comments.length > 0">
+    <div class="comment" *ngFor="let element of ticket.comments">
+        <!-- Icon & Name -->
+        <div class="commentIconName">
+            <div class="userCommentIcon"><span class="text normal">{{element.user[0].toUpperCase()}}</span>
+            </div>
+            <!-- Username and date -->
+            <div class="userInfo">
+                <span class="text normal">{{element.user}}</span>
+                <span class="text xsmall">{{formatDate(element.date)}}</span>
+            </div>
+            <!-- //Username and date -->
+        </div>
+        <!-- //Icon & Name -->
+        <div class="commentCont" [@pop]>
+            <span class="commentText">{{element.text}}</span>
+        </div>
+    </div>
+    <!-- Comments -->
+</div>

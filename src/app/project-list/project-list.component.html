@@ -1,0 +1,55 @@
+<div class="mainContainer draggingContainer" id="listContainer{{list.id}}" >
+    <!-- Projectname Container -->
+    <!-- 2 Elements , flex row, icon and text -->
+    <div class="projectNameContainer">
+        <!-- Icon -->
+        <div class="projectDot" [ngStyle]="{'background-color' : list.color}"><span></span></div>
+        <div class="listName">
+            <span class="text normal medBold noSelect block">{{list.name}}</span>
+        </div>
+        <span class="medBold white noSelect">({{list.tickets.length}})</span>
+        <!-- Edit Container -->
+        <div class="editContainer" (click)="toggleEdit()">
+            <img src="assets/icons/menu.png" alt="" class="icon filterWhite">
+        </div>
+    </div>
+
+    <div class="editCont" *ngIf="editContainer" (click)="toggleEditDiv($event, editCont)" #editCont>
+        <div class="editContInside" [@pop]>
+            <div class="nameInput flexC">
+                <span class="text normal semiBold">Name:</span>
+                <input type="text" value="{{list.name}}" spellcheck="false" #ticketNameInput>
+            </div>
+            <span class="text normal semiBold">Color:</span>
+            <div class="colors">
+                <button class="colorBtn" *ngFor="let element of colors; let i = index" [ngStyle]="{'background-color' : element}" [ngClass]="{colorSelected: colorSelected == i}" (click)="setColorSelected(i)"></button>
+            </div>
+            <div class="buttons">
+                <button class="applyBtn" (click)="applyChanges(ticketNameInput)">Apply</button>
+                <button class="cancelBtn" (click)="toggleEdit()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tickets -->
+    <div class="ticketsContainer" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="list.tickets">
+        <app-project-ticket *ngFor="let ticket of list.tickets" [ticket]="ticket"></app-project-ticket>
+        <!-- <div class="tmpTicketContainer" *ngIf="dragContainerID == list.id">
+            <span></span>
+        </div> -->
+    </div>
+    <!-- //Tickets -->
+    <button class="addTicketButton" *ngIf="!newTicket" (click)="toggleNewTicket()" type="button">+ New Ticket</button>
+    <div class="newTicketContainer" *ngIf="newTicket">
+        <span class="text normal">Ticket Name:</span>
+        <input type="text" class="ticketNameInput" #ticketNameInput>
+        <div class="buttonsContainer">
+            <button class="addButton" (click)="addNewTicket(ticketNameInput)">Add+</button>
+            <button class="cancelButton" (click)="closeNewTicket(ticketNameInput)">Cancel</button>
+        </div>
+    </div>
+
+
+
+</div>

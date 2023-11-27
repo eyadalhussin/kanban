@@ -1,0 +1,103 @@
+:host(app-project-ticket){
+    width: 90%;
+}
+
+.mainContainer{
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0em 0 0.4em 0;
+    cursor: pointer;
+    background-color: var(--secondary);
+    margin-bottom: 1em;
+}
+
+.mainContainer:hover{
+    border: 2px solid var(--touch);
+}
+
+.ticketNameContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.editIcon{
+    max-width: 20px;
+    max-height: 20px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.editIcon:hover{
+    opacity: 1;
+}
+
+.epContainer{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.eCont{
+    display: flex;
+    gap: 0.5em;
+}
+
+.element{
+    display: flex;
+    gap: 2px;
+}
+
+.elementIcon{
+    max-width: 15px;
+    max-height: 15px;
+}
+
+.pCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.userIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+
+.tooltip{
+    position: relative;
+}
+
+.tooltiptext{
+    visibility: hidden;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    font-size: 0.7em;
+    font-weight: 600;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}

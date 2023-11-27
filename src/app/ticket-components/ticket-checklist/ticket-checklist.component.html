@@ -1,0 +1,30 @@
+<!-- Label and Name -->
+<div class="cont">
+    <div class="iconCont">
+        <div class="iconName">
+            <img src="assets/icons/checkList.png" alt="" class="icon filterWhite">
+            <span class="text normal semiBold">Checklist ({{getDoneTasks()}}/{{ticket.checkList.length}})</span>
+        </div>
+    </div>
+    <!-- Check List -->
+    <div class="checkList">
+        <!-- Add new Item -->
+        <div class="addContainer">
+            <input type="text" class="checkItemInput" placeholder="Add new Item" #checkItemInput
+                (keydown)="addCheckListItemInput($event)">
+            <button class="addCheckItemButton" (click)="addCheckListItem(checkItemInput)">+</button>
+        </div>
+        <!-- //Add new Item -->
+
+        <!-- CheckItems -->
+        <div class="checkItem" *ngFor="let element of ticket.checkList; let i = index">
+            <div class="checkName">
+                <input type="checkbox" class="checkBox" [checked]="element.checked" (change)="setCheckBox(i)">
+                <label for="check1" class="checkText" contenteditable="true" (keydown)="preventNewLine($event)"
+                    [ngClass]="{checked: element.checked}">{{element.description}}</label>
+            </div>
+            <button class="checkItemEditButton" (click)="removeCheckItem(i)">-</button>
+        </div>
+        <!-- //CheckItems -->
+    </div>
+</div>

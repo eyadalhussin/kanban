@@ -1,0 +1,73 @@
+<div class="mainContainer" [ngClass]="{padding: sidebarState === 'open'}" *ngIf="!isLoading">
+    <div class="projectNameContainer">
+
+        <div class="leftContainer">
+            <span class="text normal semiBold">{{project.name}}</span>
+        </div>
+
+        <div class="rightContainer">
+
+            <div class="usersContainer" *ngIf="getWidthState()">
+                <div class="userIcon tooltip" *ngFor="let element of project.users" [ngStyle]="{'background-color' : element.color}" >
+                    <span class="text small">{{element.surname.substring(0,1)}}{{element.lastname.substring(0,1)}}</span>
+                    <div class="userNameContainer">
+                        <span class="userName tooltiptext" [ngStyle]="{'background-color' : element.color}">{{element.surname}} {{element.lastname}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="horBreaker"><span></span></div>
+
+            <div class="userAddContainer">
+                <div class="userAddIcon"><img src="assets/icons/addUser.png" alt="" class="addUserIcon filterWhite" (click)="toggleUsers()"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects" cdkDropListGroup>
+        <app-project-list *ngFor="let element of project.lists" [list]="element"></app-project-list>
+        <div class="newListContainer" *ngIf="!newList" >
+            <button class="newListButton" (click)="toggleNewList()">+ Add new List</button>
+        </div>
+        <!-- New List  -->
+        <div class="newListContainer" *ngIf="newList">
+            <span class="text normal">List Name:</span>
+            <input type="text" class="listNameInput" #listNameInput>
+            <div class="buttonsContainer">
+                <button class="addButton" (click)="addNewList(listNameInput)">Add+</button>
+                <button class="cancelButton" (click)="toggleNewList()">Cancel</button>
+            </div>
+            <!-- New List  -->
+
+        </div>
+        <!-- Add User -->
+        <div class="addUserContainer" *ngIf="usersToggled">
+            <div class="addUserCont">
+                <div class="selectUserContainer">
+                    <span class="text normal">Select Users:</span>
+                </div>
+                <!-- <div class="user" *ngFor="let user of availableUsers; let i = index"  (click)="setSelectedUser(user.id)"> -->
+                <div class="user" *ngFor="let user of availableUsers; let i = index" (click)="checkUser(user.id)">
+                    <div class="userIconBig"  [ngStyle]="{'background-color' : user.color}" [ngClass]="{projectOwner : user.id == 0}">
+                        <span class="userName">{{user.surname.substring(0,1)}}{{user.lastname.substring(0,1)}}</span>
+                    </div>
+                    <span class="text normal">{{user.surname}} {{user.lastname}}</span>
+                    <img src="assets/icons/selected.png" alt="" class="icon" *ngIf="user.id != 0" [ngClass]="{filterGreen: selectedUsers.includes(user.id), filterWhite: !selectedUsers.includes(user.id)}">
+                    <!-- <img src="assets/icons/selected.png" alt="" class="icon" [ngClass]="{filterGreen: selectedUsers.includes(user.id),filterWhite: !selectedUsers.includes(user.id)}" *ngIf="user.id != 0"> -->
+                    <img src="assets/icons/owner.png" alt="" class="icon filterWhite" *ngIf="user.id == 0">
+                </div>
+                <div class="controlButtons">
+                    <button class="applyUserButton" (click)="applyUsers()">Apply</button>
+                    <!-- <button class="applyUserButton" (click)="applyUsers()">Apply</button> -->
+                    <button class="cancelUserButton" (click)="cancelUsers()">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <!-- /Add User -->
+    </div>
+
+    <div class="backContainer" (click)="openSidebar()" [ngClass]="{flip: sidebarState ==='closed'}"
+        *ngIf="sidebarState === 'closed'">
+        <img src="assets/icons/chevronLeft.png" alt="" class="backIcon filterWhite">
+    </div>
+</div>

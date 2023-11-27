@@ -1,0 +1,151 @@
+:host(app-ticket-comment){
+    width: 100%;
+}
+
+.commentsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    border: 1px solid white;
+    padding: 1em 0.5em 1em 0.5em;
+    gap: 1em;
+    border-radius: 3px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.commentsContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.commentCont{
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding:  0.2em;
+}
+
+.showCommentButton{
+    all: unset;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.showCommentButton:hover{
+    font-weight: 700;
+}
+
+.userCommentIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: var(--touch);
+}
+
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.comment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.commentIconName{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5em 1em 0.5em 1em;
+    gap: 0.3em;
+    transition: 0.2s ease;
+}
+
+.cont:hover{
+    background-color: #3A4556;
+}
+
+.iconCont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.iconName{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.checkItemInput{
+    all: unset;
+    background-color: white;
+    font-size: 0.8em;
+    width: 85%;
+    height: 1.9em;
+    border-radius: 3px;
+    padding-left: 0.5em;
+}
+
+.addCheckItemButton{
+    all: unset;
+    height: 25px;
+    width: 25px;
+    background-color: var(--touch);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 3px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.addCheckItemButton:hover, .checkItemEditButton:hover{
+    transform: scale(1.1);
+}
+
+.addContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentText{
+    word-wrap: break-word;
+    font-size: 0.8em;
+}

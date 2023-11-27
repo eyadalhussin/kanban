@@ -1,0 +1,104 @@
+[
+    {
+        "id": 0,
+        "name" : "Kanban Tutorial",
+        "lists" : [
+            {
+                "id":0,
+                "name": "ToDo",
+                "tickets": [
+                    {
+                        "id": 0,
+                        "name" : "Click On Me !",
+                        "list":"Todo",
+                        "description":"Hallo, Thanks for using my Programm ! To get a better look try to finish the very simple tasks on the next cards. Click on each Card and look at the description.",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    },
+                    {
+                        "id": 1,
+                        "name" : "Change Description !",
+                        "list":"Todo",
+                        "date":"",
+                        "description":"Write here anything you want then click Apply",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    },
+                    {
+                        "id": 2,
+                        "name" : "Add Check Items",
+                        "list":"Todo",
+                        "date":"",
+                        "description":"You can add many check Items to a card. Click on the tickbox on the left of each item to mark it as Done.",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    },
+                    {
+                        "id": 3,
+                        "name" : "Write a Comment",
+                        "list":"Todo",
+                        "date":"",
+                        "description":"Click on show Comments, then write a new one :D, you can write anything you like, everything will restart on page refresh and it will not be saved anywhere.",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    },
+                    {
+                        "id": 5,
+                        "name" : "Add a New List",
+                        "list":"Todo",
+                        "date":"",
+                        "description":"Click on 'Add new List' give it a color, rename it, and maybe add some Tickets.",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    },
+                    {
+                        "id": 6,
+                        "name" : "Drag Me",
+                        "list":"Todo",
+                        "date":"",
+                        "description":"Move me to the new created List per Drag & Drop",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    },
+                    {
+                        "id": 8,
+                        "name" : "That's it !",
+                        "list":"Todo",
+                        "date":"",
+                        "description":"Now it is your turn to explore more :D",
+                        "checkList" : [],
+                        "comments" : [],
+                        "listID":0
+                    }
+                ],
+                "color" : "#0275d8"
+            }
+        ],
+        "users": [
+                {
+                    "id":0,
+                    "surname":"Max",
+                    "lastname":"Muster",
+                    "color":"#00A884"
+                },
+                {
+                    "id":1,
+                    "surname":"Eyad",
+                    "lastname":"Alhussin",
+                    "color":"#0275d8"
+                },
+                {
+                    "id":2,
+                    "surname":"Linda",
+                    "lastname":"Klein",
+                    "color":"#f0ad4e"
+                }
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+<div class="cont">
+    <div class="iconCont">
+        <div class="iconName">
+            <img src="assets/icons/description.png" alt="" class="icon filterWhite">
+            <span class="text normal semiBold">Description</span>
+        </div>
+        <button class="toggleButton" (click)="toggleDescription()">{{ticket.description == "" ? "+" :
+            "-"}}</button>
+    </div>
+    <textarea name="" id="" cols="30" rows="10" class="descriptionTextarea" *ngIf="ticket.description != ''"
+        [@pop] (change)="updateDescription(description)" #description>{{ticket.description}}</textarea>
+</div>

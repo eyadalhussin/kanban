@@ -1,0 +1,32 @@
+[
+    {
+        "id":0,
+        "surname":"Max",
+        "lastname":"Muster",
+        "color":"#00A884"
+    },
+    {
+        "id":1,
+        "surname":"Eyad",
+        "lastname":"Alhussin",
+        "color":"#0275d8"
+    },
+    {
+        "id":2,
+        "surname":"Linda",
+        "lastname":"Klein",
+        "color":"#f0ad4e"
+    },
+    {
+        "id":3,
+        "surname":"Simon",
+        "lastname":"Fischer",
+        "color":"#d9534f"
+    },
+    {
+        "id":4,
+        "surname":"Maya",
+        "lastname":"Diab",
+        "color":"#5bc0de"
+    }
+]

@@ -1,0 +1,74 @@
+:host(app-ticket-checklist){
+    width: 100%;
+}
+.checkList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.checkItemInput{
+    all: unset;
+    background-color: white;
+    font-size: 0.8em;
+    width: 85%;
+    height: 1.9em;
+    border-radius: 3px;
+    padding-left: 0.5em;
+}
+
+.checkName{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.checkItem{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.checkText{
+    display: block;
+    max-width: 100%;
+    color: white;
+}
+
+.addCheckItemButton{
+    all: unset;
+    height: 25px;
+    width: 25px;
+    background-color: var(--touch);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 3px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.addCheckItemButton:hover, .checkItemEditButton:hover{
+    transform: scale(1.1);
+}
+
+.checkItemEditButton{
+    all: unset;
+    color: white;
+    font-weight: 700;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.checked{
+    text-decoration: line-through;
+    color: rgb(194, 194, 194);
+}
+
+.checkBox{
+    cursor: pointer;
+}

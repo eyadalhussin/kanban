@@ -1,0 +1,9 @@
+<div class="mainContainer">
+  <app-project-ticket-full *ngIf="editMode" [ticket]="activeTicket"></app-project-ticket-full>
+  <!-- sideBar -->
+  <app-sidebar></app-sidebar>
+  <!-- Project -->
+  <app-project></app-project>
+  <app-new-board *ngIf="newBoard"></app-new-board>
+  <app-loading-screen *ngIf="isLoading"></app-loading-screen>
+</div>

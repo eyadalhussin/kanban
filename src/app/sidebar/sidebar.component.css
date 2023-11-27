@@ -1,0 +1,255 @@
+.mainContainer{
+    width: 65vw;
+    height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3);
+    transform-origin: 0% 50%;
+    z-index: 1;
+}
+
+/* Logo */
+.logoContainer{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    user-select: none;
+}
+
+.logoLines{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.line100, .line50, .line25{
+    height: 20px;
+    width: 5px;
+    background-color: var(--touch);
+    border-radius: 2px;
+}
+
+.line50{
+    opacity: 0.5;
+}
+
+.line25{
+    opacity: 0.25;
+}
+/* //Logo */
+
+
+/* Info */
+.infoContainer{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+}
+
+.profilePicture{
+    border-radius: 100%;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--touch);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 50%;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    gap: 5px;
+}
+
+.projects::-webkit-scrollbar {
+    display: none;
+}
+  
+.project{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.project:hover{
+    background-color: var(--touch);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.selected{
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3);
+    background-color: var(--touch);
+}
+/* //Info */
+
+/* Light  & Dark Mode */
+
+.optionsContainer{
+    /* width: 100%; */
+    /* height: 10%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modeContainer{
+    height: 30px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    gap: 0.5em;
+}
+
+.modeCircle{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background: url('/assets/icons/mode.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Light  & Dark Mode */
+
+.options{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.hideContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hideIcon{
+    width: 25px;
+    height: 25px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.hideIcon:hover{
+    transform: scale(1.2);
+}
+
+.createButton{
+    all: unset;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--touch);
+    cursor: pointer;
+}
+
+.createButton:hover{
+    text-decoration: underline;
+}
+
+.createContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.newBoardContainer{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border: 1px solid white;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.ng-invalid{
+    background-color: red;
+}
+
+.boardNameInput{
+    width: 80%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.applyButton, .cancelButton{
+    all: unset;
+    font-size: 0.8em;
+    font-weight: 400;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.applyButton{
+    background-color: var(--touch);
+    color: white;
+}
+
+.cancelButton{
+    background-color: rgb(191, 191, 191);
+    color: black;
+}
+
+.applyButton:hover, .cancelButton:hover{
+    border: 1px solid white;
+}
+
+
+@media (min-width: 600px) {
+    .mainContainer{
+        width: 30vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .mainContainer{
+        width: 20vw;
+    }
+}

@@ -1,0 +1,44 @@
+<div class="mainContainer draggable" (click)="setActiveTicket()" id ="{{ticket.id}}List:{{ticket.listID}}" cdkDrag (cdkDragStarted)="onDragStarted($event)" (cdkDragEnded)="onDragEnded($event)">
+    <!-- ticket name -->
+    <div class="ticketNameContainer" draggable="false">
+        <span class="text normal">{{ticket.name}}</span>
+        <img src="assets/icons/edit.png" alt="" class="editIcon filterWhite">
+    </div>
+
+    <!-- Elements & Participents -->
+    <div class="epContainer" draggable="false">
+        <!-- Elements-->
+        <div class="eCont">
+            <!-- Description -->
+            <div class="element tooltip" *ngIf="ticket.description != '' ">
+                <img src="assets/icons/description.png" alt="" class="elementIcon filterWhite">
+                <span class="tooltiptext">Description</span>
+            </div>
+            <!-- Deadline -->
+            <div class="element tooltip" *ngIf="ticket.date != '' ">
+                <img src="assets/icons/clock.png" alt="" class="elementIcon filterWhite">
+                <span class="tooltiptext">Deadline</span>
+            </div>
+            <!-- CheckList -->
+            <div class="element tooltip" *ngIf="ticket.checkList.length > 0">
+                <img src="assets/icons/checkList.png" alt="" class="elementIcon filterWhite">
+                <span class="text xsmall">({{getDoneTasks()}} /{{ticket.checkList.length}})</span>
+                <span class="tooltiptext">Check List</span>
+            </div>
+            <!-- Comments -->
+            <div class="element tooltip" *ngIf="ticket.comments.length > 0">
+                <img src="assets/icons/comment.png" alt="" class="elementIcon filterWhite">
+                <span class="text xsmall">({{ticket.comments.length}})</span>
+                <span class="tooltiptext">Comments</span>
+            </div>
+        </div>
+
+        <!-- Participants -->
+        <div class="pCont">
+            <div class="userIcon tooltip" *ngFor="let user of ticket.users" [ngStyle]="{'background-color': user.color}">
+                <span class="text small">{{user.surname.substring(0,1)}}{{user.lastname.substring(0,1)}}</span>
+                <span class="tooltiptext" [ngStyle]="{'background-color' : user.color}">{{user.surname}} {{user.lastname}}</span>
+            </div>
+        </div>
+    </div>
+</div>

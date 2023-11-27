@@ -1,0 +1,58 @@
+.mainContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.conti{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.lines{
+    display: flex;
+    gap: 0.2em;
+}
+
+.line{
+    width: 6px;
+    height: 30px;
+    background-color: var(--touch);
+    border: 1px solid var(--touch);
+    border-radius: 1px;
+    animation: shrink 0.3s ease infinite alternate;
+}
+
+.one{
+    animation-delay: 1s;
+}
+
+.two{
+    opacity: 0.5;
+    animation-delay: 0.5s;
+}
+
+.three{
+    opacity: 0.25;
+}
+
+@keyframes shrink {
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.2);
+    }
+}

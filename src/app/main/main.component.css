@@ -1,0 +1,13 @@
+.mainContainer{
+    display: flex;
+    background-color: var(--secondary);
+    /* overflow-y: hidden; */
+    /* overflow: scroll; */
+    /* -ms-overflow-style: none;
+    scrollbar-width: none; */
+    position: relative;
+}
+
+/* .mainContainer::-webkit-scrollbar {
+    display: none;
+} */

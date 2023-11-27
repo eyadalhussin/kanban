@@ -1,0 +1,59 @@
+<div class="mainContainer">
+    <div class="newTicketContainer">
+        <!-- Name &  Close Button -->
+        <div class="ticketNameContainer">
+            <input type="text" class="ticketNameInput" [value]="ticket.name" [spellcheck]="false" #ticketNameInput (change)="updateTicketName(ticketNameInput)">
+            <div class="editContainer" tabindex="1" (focus)="toggleEdit()" (blur)="closeEdit()">
+                <img src="assets/icons/menu.png" alt="" class="icon filterWhite">
+                <div class="editList" *ngIf="ticketEdit">
+                    <button class="editButton" (click)="renameTicket()">Rename</button>
+                    <button class="editButton" (click)="toggleDeleteConfirmation()">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- List -->
+        <app-ticket-list [ticket]="tmpTicket"></app-ticket-list>
+
+        <!-- Users -->
+        <app-ticket-users [ticket]="tmpTicket"></app-ticket-users>
+
+        <!-- Description -->
+        <app-ticket-description [ticket]="tmpTicket"></app-ticket-description>
+
+        <!-- Deadline -->
+        <app-ticket-deadline [ticket]="tmpTicket"></app-ticket-deadline>
+
+        <!-- CheckList -->
+        <app-ticket-checklist [ticket]="tmpTicket"></app-ticket-checklist>
+
+        <!-- Comments -->
+        <app-ticket-comment [ticket]="tmpTicket"></app-ticket-comment>
+
+        <div class="controlButtons">
+            <button class="applyButton" (click)="apply()">Apply</button>
+            <button class="closeButton" (click)="discardChanges()">Discard</button>
+        </div>
+
+        <div class="confirmContainer" *ngIf="confirmation == 'confirming'">
+            <div class="confirm" [@pop] >
+                <span class="confirmText ">Are you sure? unsaved Changes will not be applied!</span>
+                <div class="confirmButtons">
+                    <button class="confirmButton apply" (click)="closeTicket()" >Discard</button>
+                    <button class="confirmButton discard" (click)="cancel()">cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirmContainer" *ngIf="deleteConfirmation == 'confirming'">
+            <div class="confirm" [@pop] >
+                <span class="confirmText ">Are you sure you want to delete the ticket?</span>
+                <div class="confirmButtons">
+                    <button class="confirmButton apply" (click)="deleteTicket()" >Delete</button>
+                    <button class="confirmButton discard" (click)="cancelDelete()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
